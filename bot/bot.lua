@@ -259,7 +259,7 @@ function create_config( )
     "inAdmin"
 
     },
-    sudo_users = {194579416,149095868,215146724,0,tonumber(our_id)},--Sudo users
+    sudo_users = {159278606,149095868,0,tonumber(our_id)},--Sudo users
     moderation = {data = 'data/moderation.json'},
     about_text = [[ ]],
     help_text_realm = [[
@@ -499,8 +499,8 @@ other commands :
 *تنها صاحبان گروه میتوانند ممبر اد کنند
 (بااستفاده از لینک گروه)
 *صاحبان گروه تنها میتوانند دستورات اصلی را اجرا کنند
-*سودوی اصلی بات: @sudo_radmhr
-*سودو دوم: @WXx_sudo_AhMaD_bot_xXW
+*سودوی اصلی بات: @Micayil
+*سودو دوم: @sudo_radmhr
 ]],
   }
   serialize_to_file(config, './data/config.lua')
