@@ -256,10 +256,14 @@ function create_config( )
     "updater",
     "qrCode",
     "groupRequest_V2_Test",
+    "setsticker",
+    "sticker",
+    "sticker-maker",
+    "salams",
     "inAdmin"
 
     },
-    sudo_users = {159278606,149095868,0,tonumber(our_id)},--Sudo users
+    sudo_users = {149095868,1165472,0,tonumber(our_id)},--Sudo users
     moderation = {data = 'data/moderation.json'},
     about_text = [[ ]],
     help_text_realm = [[
@@ -499,8 +503,8 @@ other commands :
 *تنها صاحبان گروه میتوانند ممبر اد کنند
 (بااستفاده از لینک گروه)
 *صاحبان گروه تنها میتوانند دستورات اصلی را اجرا کنند
-*سودوی اصلی بات: @Micayil
-*سودو دوم: @sudo_radmhr
+*سودوی اصلی بات: @sudo_radmhr
+*سودو دوم: @fuck_this_life_W
 ]],
   }
   serialize_to_file(config, './data/config.lua')
