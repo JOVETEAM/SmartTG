@@ -1,8 +1,8 @@
 local function callback_reply(extra, success, result)
 	--icon & rank ------------------------------------------------------------------------------------------------
 	userrank = "Member"
-	if tonumber(result.from.id) == 122774063 then
-		userrank = "Master ⭐⭐⭐⭐"
+	if tonumber(result.from.id) == 230477839 then
+		userrank = "Administrator ⭐⭐⭐⭐⭐"
 		send_document(org_chat_id,"umbrella/stickers/master.webp", ok_cb, false)
 	elseif is_sudo(result) then
 		userrank = "Sudo ⭐⭐⭐⭐⭐"
@@ -17,7 +17,7 @@ local function callback_reply(extra, success, result)
 		userrank = "Moderator ⭐"
 		send_document(org_chat_id,"umbrella/stickers/mod.webp", ok_cb, false)
 	elseif tonumber(result.from.id) == tonumber(our_id) then
-		userrank = "Umbrella-Cp ⭐⭐⭐⭐⭐⭐"
+		userrank = "SmartTG ⭐⭐⭐⭐⭐⭐"
 		send_document(org_chat_id,"umbrella/stickers/umb.webp", ok_cb, false)
 	elseif result.from.username then
 		if string.sub(result.from.username:lower(), -3) == "bot" then
@@ -175,8 +175,8 @@ local function callback_res(extra, success, result)
 		return send_large_msg(org_chat_id, "یوزرنیم وارد شده اشتباه است")
 	end
 	--icon & rank ------------------------------------------------------------------------------------------------
-	if tonumber(result.id) == 122774063 then
-		userrank = "Master ⭐⭐⭐⭐"
+	if tonumber(result.id) == 230477839 then
+		userrank = "Administrator ⭐⭐⭐⭐"
 		send_document(org_chat_id,"umbrella/stickers/master.webp", ok_cb, false)
 	elseif is_sudo(result) then
 		userrank = "Sudo ⭐⭐⭐⭐⭐"
@@ -191,7 +191,7 @@ local function callback_res(extra, success, result)
 		userrank = "Moderator ⭐"
 		send_document(org_chat_id,"umbrella/stickers/mod.webp", ok_cb, false)
 	elseif tonumber(result.id) == tonumber(our_id) then
-		userrank = "Umbrella-Cp ⭐⭐⭐⭐⭐⭐"
+		userrank = "SmartTG ⭐⭐⭐⭐⭐⭐"
 		send_document(org_chat_id,"umbrella/stickers/umb.webp", ok_cb, false)
 	elseif result.from.username then
 		if string.sub(result.from.username:lower(), -3) == "bot" then
@@ -275,8 +275,8 @@ local function callback_info(extra, success, result)
 		return send_large_msg(org_chat_id, "آی دی وارد شده اشتباه است")
 	end
 	--icon & rank ------------------------------------------------------------------------------------------------
-	if tonumber(result.id) == 122774063 then
-		userrank = "Master ⭐⭐⭐⭐"
+	if tonumber(result.id) == 230477839 then
+		userrank = "Administrator ⭐⭐⭐⭐"
 		send_document(org_chat_id,"umbrella/stickers/master.webp", ok_cb, false)
 	elseif is_sudo(result) then
 		userrank = "Sudo ⭐⭐⭐⭐⭐"
@@ -291,7 +291,7 @@ local function callback_info(extra, success, result)
 		userrank = "Moderator ⭐"
 		send_document(org_chat_id,"umbrella/stickers/mod.webp", ok_cb, false)
 	elseif tonumber(result.id) == tonumber(our_id) then
-		userrank = "Umbrella-Cp ⭐⭐⭐⭐⭐⭐"
+		userrank = "SmartTG ⭐⭐⭐⭐⭐⭐"
 		send_document(org_chat_id,"umbrella/stickers/umb.webp", ok_cb, false)
 	elseif result.from.username then
 		if string.sub(result.from.username:lower(), -3) == "bot" then
@@ -442,8 +442,8 @@ local function run(msg, matches)
 			local um_hash = 'msgs:'..msg.from.id..':'..msg.to.id
 			user_info.msgs = tonumber(redis:get(um_hash) or 0)
 			--icon & rank ------------------------------------------------------------------------------------------------
-			if tonumber(msg.from.id) == 122774063 then
-				userrank = "Master ⭐⭐⭐⭐"
+			if tonumber(msg.from.id) == 230477839 then
+				userrank = "Administrator ⭐⭐⭐⭐"
 				send_document("chat#id"..msg.to.id,"umbrella/stickers/master.webp", ok_cb, false)
 			elseif is_sudo(msg) then
 				userrank = "Sudo ⭐⭐⭐⭐⭐"
