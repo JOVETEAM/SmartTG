@@ -3,18 +3,17 @@ do
 
 function run(msg, matches)
   return [[ 
-Umbrella-Cp Telegram Bot v1.0 
+اسمارت ورژن:7.1 برنامه ریزی شده برپایه سید
  
- Team Channel : @CopierTeam
- Owner : @Amir_h
- 
+کانال تیم: @SmartTG_CH
+مدیریت اصلی: @XzX_ERPO_XzX
+ مدیریت اصلی دوم: @XeX_ERPO_XeX
  Powered by:
- #CopierTeam
+ #SmartTG
  
  Special Thanks:
-Allen
-Reza
-SeedTeam
+Mehdi
+MohamdReza
  and more...]]
 end
 
