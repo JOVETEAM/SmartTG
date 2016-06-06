@@ -2,8 +2,8 @@ do
 
   local function invite_user(chat_id, user_id)
     if is_super_banned(user_id) or is_banned(user_id, chat_id) then
-      return send_large_msg('chat#id'..chat_id, 'Invitation canceled.\n'
-                            ..'ID'..user_id..' is (super)banned.')
+      return send_large_msg('chat#id'..chat_id, 'دعوت لغو شد.\n'
+                            ..'ID'..user_id..' (سوپر)بن است.')
     end
     chat_add_user('chat#id'..chat_id, 'user#id'..user_id, ok_cb, false)
   end
@@ -12,9 +12,9 @@ do
     if success == 1 then
       invite_user(extra.msg.to.id, result.id)
     else
-      return send_large_msg('chat#id'..extra.msg.to.id, 'Failed to invite '
+      return send_large_msg('chat#id'..extra.msg.to.id, 'خطا در دعوت '
                             ..string.gsub(extra.msg.text, 'inv ', '')
-                            ..' into this group.\nPlease check if username is correct.')
+                            ..' دراین گروه.\nیوزر نیم اگر غلط است لطفا چک کنید')
     end
   end
 
@@ -36,7 +36,7 @@ do
         chat_add_user('chat#id'..msg.to.id, string.gsub(matches[1], ' ', '_'), ok_cb, false)
       end
     else
-      return 'This is not a chat group!'
+      return 'اینجا یک گروه چت نیست!'
     end
   end
 
