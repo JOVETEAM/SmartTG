@@ -37,8 +37,8 @@ do
       'join [invite_link] : Join into a group by providing their [invite_link].'
       },
     patterns = {
-      '^[Jj]oin$',
-      '^[Jj]oin (.*)$'
+      '^[/!#][Jj]oin$',
+      '^[/!#][Jj]oin (.*)$'
     },
     run = run
   }
