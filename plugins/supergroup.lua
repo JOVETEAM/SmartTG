@@ -32,6 +32,19 @@ local function check_member_super(cb_extra, success, result)
 		  lock_rtl = '🔓',
 		  lock_tgservice = 'yes',
 		  lock_contacts = '🔓',
+		  lock_video = 'no',
+		  lock_chat = 'no',
+		  antiemoji = 'no',
+		  lock_english = 'no',
+		  lock_gif = 'no',
+		  lock_chat = 'no',
+		  lock_join = 'no',
+		  lock_ax = 'no',
+		  lock_share = 'no',
+		  antifosh = 'yes',
+		  lock_antiads = 'yes',
+		  lock_adstag = 'no',
+		  lock_audio = 'no',
 		  strict = '🔓'
         }
       }
@@ -417,7 +430,6 @@ local function lock_group_contacts(msg, data, target)
     return 'ارسال شماره قفل شد'
   end
 end
-
 local function unlock_group_contacts(msg, data, target)
   if not is_momod(msg) then
     return
@@ -429,6 +441,62 @@ local function unlock_group_contacts(msg, data, target)
     data[tostring(target)]['settings']['lock_contacts'] = '🔓'
     save_data(_config.moderation.data, data)
     return 'ارسال شماره باز شد'
+  end
+end
+
+local function lock_group_video(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_video_lock = data[tostring(target)]['settings']['lock_video']
+  if group_contacts_lock == 'yes' then
+    return 'ارسال ویدئو در حال حاظر قفل می باشد'
+  else
+    data[tostring(target)]['settings']['lock_video'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'ارسال ویدئو قفل شد'
+  end
+end
+local function unlock_group_video(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_video_lock = data[tostring(target)]['settings']['lock_video']
+  if group_video_lock == 'no' then
+    return 'ارسال ویدئو در حال حاظر باز می باشد'
+  else
+    data[tostring(target)]['settings']['lock_video'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'ارسال ویدئو باز شد'
+  end
+end
+
+
+local function lock_group_chat(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_chat_lock = data[tostring(target)]['settings']['lock_chat']
+  if group_chat_lock == 'yes' then
+    return 'چت در حال حاظر قفل می باشد'
+  else
+    data[tostring(target)]['settings']['lock_chat'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'چت قفل شد'
+  end
+end
+
+local function unlock_group_chat(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_chat_lock = data[tostring(target)]['settings']['lock_chat']
+  if group_chat_lock == 'no' then
+    return 'چت در حال حاظر باز می باشد'
+  else
+    data[tostring(target)]['settings']['lock_chat'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'چت باز شد'
   end
 end
 
