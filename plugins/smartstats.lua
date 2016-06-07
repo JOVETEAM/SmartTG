@@ -28,7 +28,7 @@ local function chat_stats(receiver, chat_id)
         return a.msgs > b.msgs
     end
   end)
-  local text = 'Users in this chat \n'
+  local text = 'کاربران در این چت \n'
   for k,user in pairs(users_info) do
     text = text..user.name..' = '..user.msgs..'\n'
   end
@@ -60,7 +60,7 @@ local function chat_stats2(chat_id)
       end
     end)
 
-  local text = 'Users in this chat \n'
+  local text = 'کاربران در این چت \n'
   for k,user in pairs(users_info) do
     text = text..user.name..' = '..user.msgs..'\n'
   end
@@ -83,23 +83,23 @@ local function bot_stats()
   -- Users
   local hash = 'msgs:*:'..our_id
   local r = redis:eval(redis_scan, 1, hash)
-  local text = 'Users: '..r
+  local text = 'تعداد یوزر: '..r
 
   hash = 'chat:*:users'
   r = redis:eval(redis_scan, 1, hash)
-  text = text..'\nGroups: '..r
+  text = text..'\nگروه ها: '..r
   return text
 end
 local function run(msg, matches)
-  if matches[1]:lower() == 'black' then -- Put everything you like :)
+  if matches[1]:lower() == 'smart' then -- Put everything you like :)
     local about = _config.about_text
     local name = user_print_name(msg.from)
-    savelog(msg.to.id, name.." ["..msg.from.id.."] used /black ")
+    savelog(msg.to.id, name.." ["..msg.from.id.."] used smart ")
     return about
   end 
   if matches[1]:lower() == "statslist" then
     if not is_momod(msg) then
-      return "For mods only !"
+      return "تنها برای ادمین هاست !"
     end
     local chat_id = msg.to.id
     local name = user_print_name(msg.from)
@@ -109,7 +109,7 @@ local function run(msg, matches)
   if matches[1]:lower() == "stats" then
     if not matches[2] then
       if not is_momod(msg) then
-        return "For mods only !"
+        return "تنها برای ادمین هاست !"
       end
       if msg.to.type == 'chat' or msg.to.type == 'channel' then
 	    local receiver = get_receiver(msg)
@@ -121,16 +121,16 @@ local function run(msg, matches)
         return
       end
     end
-    if matches[2] == "black" then -- Put everything you like :)
+    if matches[2] == "smart" then -- Put everything you like :)
       if not is_admin1(msg) then
-        return "For admins only !"
+        return "تنها برای ادمین هاست !"
       else
         return bot_stats()
       end
     end
     if matches[2] == "group" then
       if not is_admin1(msg) then
-        return "For admins only !"
+        return "تنها برای ادمین هاست !"
       else
         return chat_stats(matches[3])
       end
@@ -140,11 +140,11 @@ end
 
 return {
   patterns = {
-    "^[#!/]([Ss]tats)$",
-    "^[#!/]([Ss]tatslist)$",
-    "^[#!/]([Ss]tats) (group) (%d+)",
-    "^[#!/]([Ss]tats) (black)",
-	"^[#!/]([Bb]lack)"
+    "^([Ss]tats)$",
+    "^([Ss]tatslist)$",
+    "^([Ss]tats) (group) (%d+)",
+    "^([Ss]tats) (smart)",
+	"^([Ss]mart)"
     }, 
   run = run
 }
