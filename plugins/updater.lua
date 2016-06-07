@@ -7,7 +7,7 @@ text = io.popen("git pull "):read('*all')
 end
 return {
   patterns = {
-    '^[#/!]update$'
+    '^update$'
   },
   run = run,
   moderated = true
