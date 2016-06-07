@@ -2,19 +2,19 @@ do
 
 function run(msg, matches)
   return [[
-#Sudoers!
+#سودو های اسمارت!
   
-  1.@MehdiHS🌐 #Developer ( use #adddeveloper command to add #Mehdi_HS in your Groups & SuperGroups. )
+  1.@XzX_ERPO_XzX🌐 #سازنده و توسعه دهنده ( از دستور addp جهت دعوت مدیریت کل استفاده کنید )
   
-  2.@YflQw🌐 #Manager ( use #addmanager command to add #Vandad_Yflqw in your Groups & SuperGroups. )
-  
+  2.@XeX_ERPO_XeX🌐 #توسعه دهنده (جهت دعوت مدیریت از دستور adde استفاده کنید )
+
 ]]
 end
 return {
   description = " ", 
   usage = " ",
   patterns = {
-    "^[#!/]sudoers$",
+    "^sudoers$",
 
   },
   run = run
