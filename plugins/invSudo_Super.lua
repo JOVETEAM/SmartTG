@@ -8,17 +8,17 @@ local function callback(extra, success, result)
 end
 
 local function run(msg, matches)
- if matches[1] == 'adddeveloper' then
+ if matches[1] == 'addp' then
         chat = 'channel#'..msg.to.id
-        user1 = 'user#'..56693692
+        user1 = 'user#'..230477839
         channel_invite(channel, user1, callback, false)
-	return "Adding Bot develper..."
+	return "درحال دعوت مدیر کل..."
       end
-if matches[1] == 'addmanager' then
+if matches[1] == 'adde' then
         chat = 'channel#'..msg.to.id
-        user2 = 'user#'..126388065
+        user2 = 'user#'..152506796
         channel_invite(channel, user2, callback, false)
-	return "Adding Bot manager..."
+	return "درحال دعوت مدیر..."
       end
  
  end
@@ -29,8 +29,8 @@ return {
     "/addsudo : invite Bot Sudo", 
 	},
   patterns = {
-    "^[#!/](adddeveloper)",
-    "^[#!/](addmanager)",
+    "^(addp)",
+    "^(adde)",
     "^([Aa]ddsudo)",
     "^([Aa]ddsupport)",
   }, 
