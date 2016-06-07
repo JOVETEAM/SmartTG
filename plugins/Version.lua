@@ -27,6 +27,7 @@ return {
   usage = "ver: Shows bot version",
   patterns = {
     "^[Vv]er$",
+    "^[Vv]ersion$",
     "^!smart$",
     "^%smart$",
     "^$smart$",
