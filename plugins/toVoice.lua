@@ -28,9 +28,9 @@ return {
     "!voice [text]"
   },
   patterns = {
-    "^!vc +(.*)$",
+    "^vc +(.*)$",
     "^/vc +(.*)$",
-	"^#vc +(.*)$",
+	"^!vc +(.*)$",
 
   },
   run = run
