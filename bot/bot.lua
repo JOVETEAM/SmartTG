@@ -279,7 +279,8 @@ function create_config( )
     "toVoice",
     "tosticker",
     "typing",
-    "typing",
+    "updater",
+    "whitelist",
     "pmLoad"
 
     },
