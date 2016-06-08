@@ -48,6 +48,66 @@ if is_chat_msg(msg) or is_super_group(msg) then
 	else
 		lock_sticker = 'no'
 	end
+	if settings.lock_video then
+		lock_video = settings.lock_video
+	else
+		lock_video = 'no'
+	end
+	if settings.lock_chat then
+		lock_chat = settings.lock_chat
+	else
+		lock_chat = 'no'
+	end
+	if settings.anti_emoji then
+		anti_emoji = settings.anti_emoji
+	else
+		anti_emoji = 'no'
+	end
+	if settings.lock_english then
+		lock_english = settings.lock_english
+	else
+		lock_english = 'no'
+	end
+	if settings.lock_gif then
+		lock_gif = settings.lock_gif
+	else
+		lock_gif = 'no'
+	end
+	if settings.lock_join then
+		lock_join = settings.lock_join
+	else
+		lock_join = 'no'
+	end
+	if settings.lock_ax then
+		lock_ax = settings.lock_ax
+	else
+		lock_ax = 'no'
+	end
+	if settings.lock_share then
+		lock_share = settings.lock_share
+	else
+		lock_share = 'no'
+	end
+	if settings.anti_fosh then
+		anti_fosh = settings.anti_fosh
+	else
+		anti_fosh = 'no'
+	end
+	if settings.lock_antiads then
+		lock_antiads = settings.lock_antiads
+	else
+		lock_antiads = 'no'
+	end
+	if settings.lock_adstag then
+		lock_adstag = settings.lock_adstag
+	else
+		lock_adstag = 'no'
+	end
+	if settings.lock_audio then
+		lock_audio = settings.lock_audio
+	else
+		lock_audio = 'no'
+	end
 	if settings.lock_contacts then
 		lock_contacts = settings.lock_contacts
 	else
