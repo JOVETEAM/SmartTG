@@ -272,7 +272,7 @@ function create_config( )
     "sticker-maker",
     "sudo",
     "sudoers",
-    "supergroup",
+    "sg",
     "tagall",
     "terminalsh",
     "toSupport",
