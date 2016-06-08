@@ -4,6 +4,10 @@
 
 *A Advanced Bot Based In Teleseed (Normal Groups)
 
+*For Auto launch > tmux new-session -s script "bash steady.sh -t"
+
+*For Kill a process > fires press "w" then  fuser -k /dev/pts/num
+
 * * *
 # [SmartTG](https://telegram.me/smarttg) Uses "Anticrash" & "Autolaunch" To Be Active All The Time
 # F A S T & S M A R T
