@@ -320,14 +320,16 @@ Create a realm using the `!createrealm` command.
 
 # Our team!
 
-[MehdiHS](https://github.com/mehdi-hs) ([Telegram](https://telegram.me/MehdiHS))
+[Pouya ERPO](https://github.com/GrayHatp) ([Telegram](https://telegram.me/XzX_ERPO_XzX))
 
-[YflQw](https://github.com/Mehdi-HS) ([Telegram](https://telegram.me/YflQw))
+[Erfan ERPO] ([Telegram](https://telegram.me/XeX_ERPO_XeX))
 
-[Alireza NiGht](https://github.com/mehdi-hs) ([Telegram](https://telegram.me/ye_adam_mamoli))
+[Mahdi] ([Telegram](https://telegram.me/theking_1995))
 
-[Surena](https://github.com/mehdi-hs) ([Telegram](https://telegram.me/mr_surena))
+[MohamadReza] ([Telegram](https://telegram.me/Us_Mw))
+
+[Mohamad] ([Telegram](https://telegram.me/Mr_lua))
 
 ###  Telegram channel :
 
-[@Black_CH](https://telegram.me/Black_CH)
+[@SmartTG_CH](https://telegram.me/SmartTG_CH)
