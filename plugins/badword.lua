@@ -99,13 +99,13 @@ end
 
 return {
   patterns = {
-  "^([Rr]w) (.*)$",
-  "^([Aa]ddword) (.*)$",
-   "^([Rr]emword) (.*)$",
-    "^([Bb]adwords)$",
-    "^([Cc]learbadwords)$",
+  "^(rw) (.*)$",
+  "^(addword) (.*)$",
+   "^(remword) (.*)$",
+    "^(badwords)$",
+    "^(clearbadwords)$",
 "^(.+)$",
-	   
+
   },
   run = run
 }
