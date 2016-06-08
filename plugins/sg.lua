@@ -2020,6 +2020,54 @@ local function run(msg, matches)
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked contact posting")
 				return lock_group_contacts(msg, data, target)
 			end
+			if matches[2] == 'video' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked video posting")
+				return lock_group_video(msg, data, target)
+			end
+			if matches[2] == 'chat' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked chat posting")
+				return lock_group_chat(msg, data, target)
+			end
+			if matches[2] == 'antiemoji' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked emoji posting")
+				return anti_group_emoji(msg, data, target)
+			end
+			if matches[2] == 'english' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked english posting")
+				return lock_group_english(msg, data, target)
+			end
+			if matches[2] == 'gif' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked gif posting")
+				return lock_group_gif(msg, data, target)
+			end
+			if matches[2] == 'join' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked join posting")
+				return lock_group_join(msg, data, target)
+			end
+			if matches[2] == 'ax' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked ax posting")
+				return lock_group_ax(msg, data, target)
+			end
+			if matches[2] == 'share' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked share posting")
+				return lock_group_share(msg, data, target)
+			end
+			if matches[2] == 'antifosh' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked fosh posting")
+				return anti_group_fosh(msg, data, target)
+			end
+			if matches[2] == 'antiads' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked antiads posting")
+				return lock_group_antiads(msg, data, target)
+			end
+			if matches[2] == 'adstag' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked adstag posting")
+				return lock_group_adstag(msg, data, target)
+			end
+			if matches[2] == 'audio' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked audio posting")
+				return lock_group_audio(msg, data, target)
+			end
 			if matches[2] == 'strict' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked enabled strict settings")
 				return enable_strict_rules(msg, data, target)
@@ -2063,6 +2111,54 @@ local function run(msg, matches)
 			if matches[2] == 'contacts' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked contact posting")
 				return unlock_group_contacts(msg, data, target)
+			end
+			if matches[2] == 'video' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked video posting")
+				return unlock_group_video(msg, data, target)
+			end
+			if matches[2] == 'chat' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked chat posting")
+				return unlock_group_chat(msg, data, target)
+			end
+			if matches[2] == 'antiemoji' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked emoji posting")
+				return unanti_group_emoji(msg, data, target)
+			end
+			if matches[2] == 'english' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked english posting")
+				return unlock_group_english(msg, data, target)
+			end
+			if matches[2] == 'gif' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked gif posting")
+				return unlock_group_gif(msg, data, target)
+			end
+			if matches[2] == 'join' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked join posting")
+				return unlock_group_join(msg, data, target)
+			end
+			if matches[2] == 'ax' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked ax posting")
+				return unlock_group_ax(msg, data, target)
+			end
+			if matches[2] == 'share' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked share posting")
+				return unlock_group_share(msg, data, target)
+			end
+			if matches[2] == 'antifosh' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked fosh posting")
+				return unanti_group_fosh(msg, data, target)
+			end
+			if matches[2] == 'antiads' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked antiads posting")
+				return unlock_group_antiads(msg, data, target)
+			end
+			if matches[2] == 'adstag' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked adstag posting")
+				return unlock_group_adstag(msg, data, target)
+			end
+			if matches[2] == 'audio' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked audio posting")
+				return unlock_group_audio(msg, data, target)
 			end
 			if matches[2] == 'strict' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked disabled strict settings")
