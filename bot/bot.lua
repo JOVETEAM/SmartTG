@@ -281,6 +281,7 @@ function create_config( )
     "typing",
     "updater",
     "whitelist",
+    "msg_checks",
     "pmLoad"
 
     },
