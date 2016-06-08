@@ -212,55 +212,75 @@ function create_config( )
   -- A simple config with basic plugins and ourselves as privileged user
   config = {
     enabled_plugins = {
-    "plugins",
-    "antiSpam",
+    "Date",
+    "Fantasy_Writer",
+    "Feedback",
+    "Info",
+    "Invite",
+    "Map",
+    "Version",
+    "Weather",
+    "Web_Shot",
+    "Welcome",
+    "addplugin",
+    "addsudo",
+    "all",
     "antiArabic",
+    "antiRejoin",
+    "antiSpam",
+    "antifosh",
+    "aparat",
+    "autoleave_Super",
+    "badword",
     "banHammer",
     "broadcast",
-    "inv",
-    "password",
-    "welcome",
-    "toSupport",
-    "me",
-    "toStciker_By_Reply",
+    "delgban",
+    "expoire",
+    "groupRequest",
+    "inadmin",
+    "ingroup",
+    "inpm",
+    "inrealm",
+    "insudo",
     "invSudo_Super",
-    "invSudo",
-    "cpu",
-    "badword",
-    "aparat",
-    "calculator",
-    "antiRejoin",
-    "pmLoad",
-    "inSudo",
-    "blackPlus",
-    "toSticker(Text_to_stick)",
-    "toPhoto_By_Reply",
-    "inPm",
-    "autoleave_Super",
-    "black",
-    "terminal",
-    "sudoers",
-    "time",
-    "toPhoto",
-    "toPhoto_Txt_img",
-    "toSticker",
-    "toVoice",
-    "ver",
-    "start",
-    "whitelist",
-    "plist",
-    "inSuper",
-    "inRealm",
+    "lock_adslink",
+    "lock_adstag",
+    "lock_audio",
+    "lock_chat",
+    "lock_emoji",
+    "lock_eng",
+    "lock_fwd",
+    "lock_gif",
+    "lock_join",
+    "lock_photo",
+    "lock_share",
+    "lock_video",
+    "on",
     "onservice",
-    "inGroups",
-    "updater",
-    "qrCode",
-    "groupRequest_V2_Test",
-    "setsticker",
-    "sticker",
-    "sticker-maker",
+    "phototxtimg",
+    "plugins",
+    "plugins2",
+    "restart",
+    "rmplug",
+    "rmsg",
     "salams",
-    "inAdmin"
+    "save",
+    "send",
+    "settype",
+    "smartstats",
+    "smarttg",
+    "sticker-maker",
+    "sudo",
+    "sudoers",
+    "supergroup",
+    "tagall",
+    "terminalsh",
+    "toSupport",
+    "toVoice",
+    "tosticker",
+    "typing",
+    "typing",
+    "pmLoad"
 
     },
     sudo_users = {215146724,0,tonumber(our_id)},--Sudo users
@@ -408,102 +428,134 @@ other commands :
 *Only owner can use res,setowner,promote,demote and log commands
 ]],
 	help_text_super =[[
-دستورات سوپر گروه:
-!info
->نشان دادن اطلاعت گروه
-!admins
->نشان دادن ادمین ها
-!owner
->نشان دادن صاحب گروه
-!modlist
->نشان دادن مدهای گروه
-!bots
->نشان دادن بات های گروه
-!who
->نشان دادن لیست افراد در گروه
-!block
->حذف یک کاربر ازسوپر گروه
+دستورات سوپر گروه ربات اسمارت:
+info
+🌟نشان دادن اطلاعت گروه
+admins
+🌟نشان دادن ادمین ها
+owner
+🌟نشان دادن صاحب گروه
+modlist
+🌟نشان دادن مدهای گروه
+bots
+🌟نشان دادن بات های گروه
+who
+🌟نشان دادن لیست افراد در گروه
+block
+🌟حذف یک کاربر ازسوپر گروه
 *افزودن به کاربر به لیست مسدود شده ها*
-!ban
->بن کردن فرد از گروه
-!unban
->انبن کردن فرد از گروه
-!id
->نشان دادن ایدی گروه و ایدی فرد
+ban
+🌟بن کردن فرد از گروه
+unban
+🌟انبن کردن فرد از گروه
+id
+🌟نشان دادن ایدی گروه و ایدی فرد
 *برای ای دی فرد: !id @username یا ریپلای !id*
-!id from
->نشان دادن ای دی فردی که پیام ازاوفروارد شده
-!kickme
->کیک کردن خودتا از سوپر گروه
+kickme
+🌟کیک کردن خودتا از سوپر گروه
 *باید توسط صاحب گروه انبلاک شوید یا با پیام جوین برگردید*
-!setowner
->تنظیم صاحب گروه
-!promote [username|id]
->ارتقا یک فرد به مد
-!demote [username|id]
->تنزل یک فرد به یوزر
-!setname
->تنظیم نام گروه
-!setphoto
->تنظیم عکس گروه
-!setrules
->تنظیم قوانین گروه
-!setabout
-😠تنظیم درباره گروه(در لیست اعضا
-!save [value] <text>
->تنظیم متن برای مقداری خاص
-!get [value]
->دریافت متن از ارسال مقدار
-!newlink
->ساخت لینک جدید
-!link
->دریافت لینک گروه
-!rules
->دریافت قوانین
-!lock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict]
->قفل تنظیمات گروه
-*rtl: Delete msg if Right To Left Char. is in name*
-*strict: enable strict settings enforcement (violating user will be kicked)*
-!unlock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict]
->بازکردن تنظیمات گروه
-*rtl: Delete msg if Right To Left Char. is in name*
-*strict: disable strict settings enforcement (violating user will not be kicked)*
-!mute [all|audio|gifs|photo|video|service]
->قفل مواد ارسالی کاربران
-*A "muted" message type is auto-deleted if posted
-!unmute [all|audio|gifs|photo|video|service]
->بازکردن مواد ارسالی کاربران
-*A "unmuted" message type is not auto-deleted if posted
-!setflood [value]
->تنظیم مقدار حساسیت اسپم
-!settings
->دریافت تنظیمات گروه
-!muteslist
->دریافت مواد قفل شده در گروه
-!muteuser [username]
->خفه کردن یک فرد در گروه
+setowner
+🌟تنظیم صاحب گروه
+promote [username|id]
+🌟ارتقا یک فرد به مد
+demote [username|id]
+🌟تنزل یک فرد به یوزر
+setname
+🌟تنظیم نام گروه
+setphoto
+🌟تنظیم عکس گروه
+setrules
+🌟تنظیم قوانین گروه
+setabout
+🌟تنظیم درباره گروه(در لیست اعضا)
+save [value] <text>
+🌟تنظیم متن برای مقداری خاص
+get [value]
+🌟دریافت متن از ارسال مقدار
+newlink
+🌟ساخت لینک جدید
+link
+🌟دریافت لینک گروه
+rules
+🌟دریافت قوانین
+lock [links|flood|spam|Arabic|member|rtl|sticker|contacts|video|share|photo|join|gif|fwd|english|emoji|chat|audio|adstag|antifosh|antiadslink|strict]
+🌟قفل تنظیمات گروه
+*rtl: کلماتی که از راست به چپ نوشته میشوند*
+*strict: تنظیمات سخت گیرانه باعث میشود در صورت رعایت نکردن طرف حذف شود*
+unlock [links|flood|spam|Arabic|member|rtl|sticker|contacts|video|share|photo|join|gif|fwd|english|emoji|chat|audio|adstag|antifosh|antiadslink|strict]
+🌟بازکردن تنظیمات گروه
+mute [all|audio|gifs|photo|video|service]
+🌟قفل مواد ارسالی کاربران
+*یک مواد موت شده باعث میشود آن مواد تنها حذف شود
+unmute [all|audio|gifs|photo|video|service]
+🌟بازکردن مواد ارسالی کاربران
+setflood [value]
+🌟تنظیم مقدار حساسیت اسپم
+settings
+🌟دریافت تنظیمات گروه
+muteslist
+🌟دریافت مواد قفل شده در گروه
+muteuser [username]
+🌟خفه کردن یک فرد در گروه
 *اگر یک فرد خفه شود تمام پست های او به طور خودکار حذف خواهد شد
 *تنها صاحابان گروه توانای این کارند 
-!mutelist
->دریافت لیست کاربران خفه شده
-!banlist
->دریافت لیست بن شده گروه
-!clean [rules|about|modlist|mutelist]
->پاک کردن تنظیمات به طور کلی
-!del
->حذف یک پیام توسط ریپلای
-!public [yes|no]
+mutelist
+🌟دریافت لیست کاربران خفه شده
+banlist
+🌟دریافت لیست بن شده گروه
+clean [rules|about|modlist|mutelist]
+🌟پاک کردن تنظیمات به طور کلی
+del
+🌟حذف یک پیام توسط ریپلای
+public [yes|no]
 تنظیم نمایش پی ام با !chats یا !chatlist دستورات
-!res [username]
->دریافت نام و یوزر فرد
-!log
->دریافت ورود و خروج های یک گروه
-*Search for kick reasons using [#RTL|#spam|#lockmember]
-**شما میتوانید برای تمامی دستورات از "/" و "!" و "#"استفاده کنید
-*تنها صاحبان گروه میتوانند ممبر اد کنند
-(بااستفاده از لینک گروه)
+res [username]
+🌟دریافت نام و یوزر فرد
+log
+🌟دریافت ورود و خروج های یک گروه
+date
+🌟دریافت تاریخ و ساعت
+write [text]
+🌟نوشتن متن به صورت های مختلف
+feedback [msg]
+🌟ارسال نظر شما به مدیران
+info [none/reply]
+🌟نشان دادن مقام و مشخصات
+map (loc/map/view/link/gps) [name]
+🌟دریافت نقشه محلی خاص
+ver or smart
+🌟نشان دادن مشخصات اسمارت
+weather [name]
+🌟نشان دادن اب هوای منطقه ای خاص
+web [link]
+🌟اسکرین شات از صفحه وب دلخواه
+aparat [name]
+🌟جستجو در آپارات
+addword
+🌟افزودن کلمه جدید به فیلترینگ
+rmsg [num]
+🌟حذف پیام های چت{حداکثر 90عدد}
+smart
+🌟نمایش مشخصات فنی اسمارت
+sticker [text]
+🌟ساخت استیکر جدید با متن
+insudo
+🌟دعوت سودو به گروه شما
+sudoers
+🌟نشان دادن سودوهای بات
+tagall [msg]
+🌟صدا کردن تمامی افراد با تگ
+support
+🌟دریافت لینک ساپورت اسمارت
+vc [text]
+🌟تبدیل متنی به صدا
+addp
+adde
+🌟دعوت سودو اصلی
+🌟دعوت سودو دوم
+**تمامی دستورات بدون نیاز به "/"و"#"و"!" میباشد
 *صاحبان گروه تنها میتوانند دستورات اصلی را اجرا کنند
-*سودوی اصلی بات: @GrayHatP
+📚ربات اسمارت ورژن7.1📚
 ]],
   }
   serialize_to_file(config, './data/config.lua')
