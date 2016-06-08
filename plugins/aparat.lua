@@ -1,5 +1,4 @@
 
-
 local function run(msg, matches)
 	if matches[1]:lower() == 'aparat' then
 		local url = http.request('http://www.aparat.com/etc/api/videoBySearch/text/'..URL.escape(matches[2]))
@@ -17,7 +16,7 @@ end
 
 return {
    patterns = {
-"^([Aa]parat) (.*)$",
+"^(aparat) (.*)$",
    },
    run = run
 }
