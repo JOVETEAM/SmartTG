@@ -17,13 +17,13 @@ local function pre_process(msg)
 
 local function run(msg, matches)
     chat_id =  msg.to.id
-
-    if is_momod(msg) and matches[1] == 'lock' then
+    
+ if is_momod(msg) and matches[1] == 'lock' then
 
 
                     local hash = 'mate:'..msg.to.id
                     redis:set(hash, true)
-                    return "قفل فروارد فعال شد"
+                   return "قفل فروارد فعال شد"
   elseif is_momod(msg) and matches[1] == 'unlock' then
                     local hash = 'mate:'..msg.to.id
                     redis:del(hash)
@@ -41,4 +41,3 @@ return {
     pre_process = pre_process
 }
 end
-
