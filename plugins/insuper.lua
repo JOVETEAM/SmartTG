@@ -28,7 +28,19 @@ local function check_member_super(cb_extra, success, result)
 		  lock_rtl = 'no',
 		  lock_tgservice = 'yes',
 		  lock_contacts = 'no',
-		  strict = 'no'
+		  strict = 'no',
+		  lock_video = 'no',
+		  lock_chat = 'no',
+		  antiemoji = 'no',
+		  lock_english = 'no',
+		  lock_gif = 'no',
+		  lock_join = 'no',
+		  lock_ax = 'no',
+		  lock_share = 'no',
+		  antifosh = 'yes',
+		  lock_antiads = 'yes',
+		  lock_adstag = 'no',
+		  lock_audio = 'no'
         }
       }
       save_data(_config.moderation.data, data)
@@ -455,6 +467,342 @@ local function disable_strict_rules(msg, data, target)
     return 'تنظیمات سخت گیرانه از حالا غیر فعال شد'
   end
 end
+
+local function lock_group_video(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_video_lock = data[tostring(target)]['settings']['lock_video']
+  if group_contacts_lock == 'yes' then
+    return 'ارسال ویدئو در حال حاظر قفل می باشد'
+  else
+    data[tostring(target)]['settings']['lock_video'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'ارسال ویدئو قفل شد'
+  end
+end
+
+local function unlock_group_video(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_video_lock = data[tostring(target)]['settings']['lock_video']
+  if group_video_lock == 'no' then
+    return 'ارسال ویدئو در حال حاظر باز می باشد'
+  else
+    data[tostring(target)]['settings']['lock_video'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'ارسال ویدئو باز شد'
+  end
+end
+
+local function lock_group_chat(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_chat_lock = data[tostring(target)]['settings']['lock_chat']
+  if group_chat_lock == 'yes' then
+    return 'چت در حال حاظر قفل می باشد'
+  else
+    data[tostring(target)]['settings']['lock_chat'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'چت قفل شد'
+  end
+end
+
+local function unlock_group_chat(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_chat_lock = data[tostring(target)]['settings']['lock_chat']
+  if group_chat_lock == 'no' then
+    return 'چت در حال حاظر باز می باشد'
+  else
+    data[tostring(target)]['settings']['lock_chat'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'چت باز شد'
+  end
+end
+
+local function anti_group_emoji(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_emoji_anti = data[tostring(target)]['settings']['antiemoji']
+  if group_emoji_anti == 'yes' then
+    return 'ایموجی حال حاظر قفل می باشد'
+  else
+    data[tostring(target)]['settings']['antiemoji'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'ایموجی قفل شد'
+  end
+end
+
+local function unanti_group_emoji(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_emoji_anti = data[tostring(target)]['settings']['antiemoji']
+  if group_emoji_anti == 'no' then
+    return 'ایموجی حال حاظر باز می باشد'
+  else
+    data[tostring(target)]['settings']['antiemoji'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'ایموجی باز شد'
+  end
+end
+
+local function lock_group_english(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_english_lock = data[tostring(target)]['settings']['lock_english']
+  if group_english_lock == 'yes' then
+    return 'انگلیسی حال حاظر قفل می باشد'
+  else
+    data[tostring(target)]['settings']['lock_english'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'انگلیسی قفل شد'
+  end
+end
+
+local function unlock_group_english(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_english_lock = data[tostring(target)]['settings']['lock_english']
+  if group_english_lock == 'no' then
+    return 'انگلیسی در حال حاظر باز می باشد'
+  else
+    data[tostring(target)]['settings']['lock_english'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'انگلیسی باز شد'
+  end
+end
+
+local function lock_group_gif(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_gif_lock = data[tostring(target)]['settings']['lock_gif']
+  if group_gif_lock == 'yes' then
+    return 'گیف در حال حاظر قفل می باشد'
+  else
+    data[tostring(target)]['settings']['lock_gif'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'گیف قفل شد'
+  end
+end
+
+local function unlock_group_gif(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_gif_lock = data[tostring(target)]['settings']['lock_gif']
+  if group_gif_lock == 'no' then
+    return 'گیف در حال حاظر باز می باشد'
+  else
+    data[tostring(target)]['settings']['lock_gif'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'گیف باز شد'
+  end
+end
+
+local function lock_group_join(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_join_lock = data[tostring(target)]['settings']['lock_join']
+  if group_join_lock == 'yes' then
+    return 'جوین در حال حاظر قفل می باشد'
+  else
+    data[tostring(target)]['settings']['lock_join'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'جوین قفل شد'
+  end
+end
+
+local function unlock_group_join(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_join_lock = data[tostring(target)]['settings']['lock_join']
+  if group_join_lock == 'no' then
+    return 'جوین در حال حاظر باز می باشد'
+  else
+    data[tostring(target)]['settings']['lock_join'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'جوین باز شد'
+  end
+end
+
+local function lock_group_ax(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_ax_lock = data[tostring(target)]['settings']['lock_ax']
+  if group_ax_lock == 'yes' then
+    return 'عکس در حال حاظر قفل می باشد'
+  else
+    data[tostring(target)]['settings']['lock_ax'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'عکس قفل شد'
+  end
+end
+
+local function unlock_group_ax(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_ax_lock = data[tostring(target)]['settings']['lock_ax']
+  if group_ax_lock == 'no' then
+    return 'عکس در حال حاظر باز می باشد'
+  else
+    data[tostring(target)]['settings']['lock_ax'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'عکس باز شد'
+  end
+end
+
+local function lock_group_share(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_share_lock = data[tostring(target)]['settings']['lock_share']
+  if group_share_lock == 'yes' then
+    return 'اشتراک گذاری در حال حاظر قفل می باشد'
+  else
+    data[tostring(target)]['settings']['lock_share'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'اشتراک گذاری قفل شد'
+  end
+end
+
+local function unlock_group_share(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_share_lock = data[tostring(target)]['settings']['lock_share']
+  if group_share_lock == 'no' then
+    return 'اشتراک گذاری در حال حاظر باز می باشد'
+  else
+    data[tostring(target)]['settings']['lock_share'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'اشتراک گذاری باز شد'
+  end
+end
+
+local function anti_group_fosh(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_fosh_anti = data[tostring(target)]['settings']['antifosh']
+  if group_fosh_anti == 'yes' then
+    return 'فحاشی در حال حاظر قفل می باشد'
+  else
+    data[tostring(target)]['settings']['antifosh'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'فحاشی قفل شد'
+  end
+end
+
+local function unanti_group_fosh(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_fosh_anti = data[tostring(target)]['settings']['antifosh']
+  if group_fosh_anti == 'no' then
+    return 'فحاشی در حال حاظر باز می باشد'
+  else
+    data[tostring(target)]['settings']['antifosh'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'فحاشی باز شد'
+  end
+end
+
+local function lock_group_antiads(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_antiads_lock = data[tostring(target)]['settings']['lock_antiads']
+  if group_antiads_lock == 'yes' then
+    return 'تبلیغات در حال حاظر قفل می باشد'
+  else
+    data[tostring(target)]['settings']['lock_antiads'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'تبلیغات قفل شد'
+  end
+end
+
+local function unlock_group_antiads(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_antiads_lock = data[tostring(target)]['settings']['lock_antiads']
+  if group_antiads_lock == 'no' then
+    return 'تبلیغات در حال حاظر باز می باشد'
+  else
+    data[tostring(target)]['settings']['lock_antiads'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'تبلیغات باز شد'
+  end
+end
+
+local function lock_group_adstag(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_adstag_lock = data[tostring(target)]['settings']['lock_adstag']
+  if group_adstag_lock == 'yes' then
+    return 'تگ در حال حاظر قفل می باشد'
+  else
+    data[tostring(target)]['settings']['lock_adstag'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'تگ قفل شد'
+  end
+end
+
+local function unlock_group_adstag(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_adstag_lock = data[tostring(target)]['settings']['lock_adstag']
+  if group_adstag_lock == 'no' then
+    return 'تگ در حال حاظر باز می باشد'
+  else
+    data[tostring(target)]['settings']['lock_adstag'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'تگ باز شد'
+  end
+end
+
+local function lock_group_audio(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_audio_lock = data[tostring(target)]['settings']['lock_audio']
+  if group_audio_lock == 'yes' then
+    return 'موسیقی در حال حاظر قفل می باشد'
+  else
+    data[tostring(target)]['settings']['lock_audio'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'موسیقی قفل شد'
+  end
+end
+
+local function unlock_group_audio(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_audio_lock = data[tostring(target)]['settings']['lock_audio']
+  if group_audio_lock == 'no' then
+    return 'موسیقی در حال حاظر باز می باشد'
+  else
+    data[tostring(target)]['settings']['lock_audio'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'موسیقی باز شد'
+  end
+end
 --End supergroup locks
 
 --'Set supergroup rules' function
@@ -555,7 +903,7 @@ end
 		end
 	end
   local settings = data[tostring(target)]['settings']
-  local text = "⚙ تنظیمات سوپرگروه :\n\n🔹 قفل لینک : "..settings.lock_link.."\n🔹 قفل فلود : "..settings.flood.."\n🔹 میزان حساسیت اسپم : "..NUM_MSG_MAX.."\n🔹 قفل اسپم : "..settings.lock_spam.."\n🔹 قفل عربی و فارسی : "..settings.lock_arabic.."\n🔹 قفل اعضا : "..settings.lock_member.."\n🔹 قفل کارکتر آر تی ال : "..settings.lock_rtl.."\n🔹 قفل استیکر : "..settings.lock_sticker.."\n🔹 عمومی بودن گروه : "..settings.public.."\n🔹 قفل تنظیمات سختگیرانه : "..settings.strict
+local text = "⚙ تنظیمات سوپرگروه :\n\n🌟 قفل فروارد : 🔐\n🌟 قفل لینک : "..settings.lock_link.."\n🌟قفل ویدئو : "..settings.lock_video.."\n🌟قفل چت : "..settings.lock_chat.."\n🌟آنتی ایموجی  : "..settings.antiemoji.."\n🌟قفل انگلیسی : "..settings.lock_english.."\n🌟قفل گیف : "..settings.lock_gif.."\n🌟قفل چت : "..settings.lock_gif.."\n🌟قفل جوین : "..settings.lock_join.."\n🌟قفل عکس : "..settings.lock_ax.."\n🌟قفل اشتراک گذاری : "..settings.lock_share.."\n🌟انتی فحش : "..settings.antifosh.."\n🌟قفل تبلیغات : "..settings.lock_antiads.."\n🌟قفل تگ : "..settings.lock_adstag.."\n🌟قفل صدا : "..settings.lock_audio.."\n🌟قفل فلود : "..settings.flood.."\n🌟میزان حساسیت اسپم : "..NUM_MSG_MAX.."\n🌟قفل اسپم : "..settings.lock_spam.."\n🌟قفل عربی و فارسی : "..settings.lock_arabic.."\n🌟قفل اعضا : "..settings.lock_member.."\n🌟قفل کارکتر آر تی ال : "..settings.lock_rtl.."\n🌟قفل ورود خروج ها : "..settings.lock_tgservice.."\n🌟 قفل استیکر : "..settings.lock_sticker.."\n🌟عمومی بودن گروه : "..settings.public.."\n🌟قفل تنظیمات سختگیرانه : "..settings.strict
   return text
 end
 
@@ -1258,7 +1606,7 @@ local function run(msg, matches)
 				resolve_username(username,  callbackres, cbres_extra)
 			else
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup ID")
-				return "> Group ID: "..msg.to.id.."\n> Group Name: "..msg.to.title.."\n> First Name: "..(msg.from.first_name or '').."\n> Last Name: "..(msg.from.last_name or '').."\n> Your ID: "..msg.from.id.."\n> Username: @"..(msg.from.username or '').."\n> Phone Number: +"..(msg.from.phone or '')			end
+				return ">🌟ایدی گروه: "..msg.to.id.."\n> 🌟نام گروه: "..msg.to.title.."\n> 🌟نام کوچک: "..(msg.from.first_name or '').."\n> 🌟نام خانوادگی: "..(msg.from.last_name or '').."\n> 🌟ایدی شما: "..msg.from.id.."\n> 🌟نام کاربری: @"..(msg.from.username or '').."\n> 🌟شماره موبایل: +"..(msg.from.phone or '')			end
 		end
 
 		if matches[1] == 'kickme' then
@@ -1675,6 +2023,54 @@ local function run(msg, matches)
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked enabled strict settings")
 				return enable_strict_rules(msg, data, target)
 			end
+			if matches[2] == 'video' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked video posting")
+				return lock_group_video(msg, data, target)
+			end
+			if matches[2] == 'chat' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked chat posting")
+				return lock_group_chat(msg, data, target)
+			end
+			if matches[2] == 'antiemoji' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked emoji posting")
+				return anti_group_emoji(msg, data, target)
+			end
+			if matches[2] == 'english' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked english posting")
+				return lock_group_english(msg, data, target)
+			end
+			if matches[2] == 'gif' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked gif posting")
+				return lock_group_gif(msg, data, target)
+			end
+			if matches[2] == 'join' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked join posting")
+				return lock_group_join(msg, data, target)
+			end
+			if matches[2] == 'ax' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked ax posting")
+				return lock_group_ax(msg, data, target)
+			end
+			if matches[2] == 'share' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked share posting")
+				return lock_group_share(msg, data, target)
+			end
+			if matches[2] == 'antifosh' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked fosh posting")
+				return anti_group_fosh(msg, data, target)
+			end
+			if matches[2] == 'antiads' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked antiads posting")
+				return lock_group_antiads(msg, data, target)
+			end
+			if matches[2] == 'adstag' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked adstag posting")
+				return lock_group_adstag(msg, data, target)
+			end
+			if matches[2] == 'audio' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked audio posting")
+				return lock_group_audio(msg, data, target)
+			end
 		end
 
 		if matches[1] == 'unlock' and is_momod(msg) then
@@ -1718,6 +2114,54 @@ local function run(msg, matches)
 			if matches[2] == 'strict' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked disabled strict settings")
 				return disable_strict_rules(msg, data, target)
+			end
+			if matches[2] == 'video' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked video posting")
+				return unlock_group_video(msg, data, target)
+			end
+			if matches[2] == 'chat' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked chat posting")
+				return unlock_group_chat(msg, data, target)
+			end
+			if matches[2] == 'antiemoji' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked emoji posting")
+				return unanti_group_emoji(msg, data, target)
+			end
+			if matches[2] == 'english' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked english posting")
+				return unlock_group_english(msg, data, target)
+			end
+			if matches[2] == 'gif' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked gif posting")
+				return unlock_group_gif(msg, data, target)
+			end
+			if matches[2] == 'join' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked join posting")
+				return unlock_group_join(msg, data, target)
+			end
+			if matches[2] == 'ax' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked ax posting")
+				return unlock_group_ax(msg, data, target)
+			end
+			if matches[2] == 'share' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked share posting")
+				return unlock_group_share(msg, data, target)
+			end
+			if matches[2] == 'antifosh' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked fosh posting")
+				return unanti_group_fosh(msg, data, target)
+			end
+			if matches[2] == 'antiads' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked antiads posting")
+				return unlock_group_antiads(msg, data, target)
+			end
+			if matches[2] == 'adstag' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked adstag posting")
+				return unlock_group_adstag(msg, data, target)
+			end
+			if matches[2] == 'audio' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked audio posting")
+				return unlock_group_audio(msg, data, target)
 			end
 		end
 
@@ -2016,57 +2460,57 @@ end
 
 return {
   patterns = {
-	"^[#!/]([Aa]dd)$",
-	"^[#!/]([Rr]em)$",
-	"^[#!/]([Mm]ove) (.*)$",
-	"^[#!/]([Ii]nfo)$",
-	"^[#!/]([Aa]dmins)$",
-	"^[#!/]([Oo]wner)$",
-	"^[#!/]([Mm]odlist)$",
-	"^[#!/]([Bb]ots)$",
-	"^[#!/]([Ww]ho)$",
-	"^[#!/]([Kk]icked)$",
-        "^[#!/]([Kk]ick) (.*)",
-	"^[#!/]([Kk]ick)",
-	"^[#!/]([Uu]pchat)$",
-	"^[#!/]([Ii][Dd])$",
-	"^[#!/]([Ii][Dd]) (.*)$",
-	"^[#!/]([Kk]ickme)$",
-	"^[#!/]([Kk]ick) (.*)$",
-	"^[#!/]([Nn]ewlink)$",
-	"^[#!/]([Ss]etlink)$",
-	"^[#!/]([Ll]ink)$",
-	"^[#!/]([Rr]es) (.*)$",
-	"^[#!/]([Ss]etadmin) (.*)$",
-	"^[#!/]([Ss]etadmin)",
-	"^[#!/]([Dd]emoteadmin) (.*)$",
-	"^[#!/]([Dd]emoteadmin)",
-	"^[#!/]([Ss]etowner) (.*)$",
-	"^[#!/]([Ss]etowner)$",
-	"^[#!/]([Pp]romote) (.*)$",
-	"^[#!/]([Pp]romote)",
-	"^[#!/]([Dd]emote) (.*)$",
-	"^[#!/]([Dd]emote)",
-	"^[#!/]([Ss]etname) (.*)$",
-	"^[#!/]([Ss]etabout) (.*)$",
-	"^[#!/]([Ss]etrules) (.*)$",
-	"^[#!/]([Ss]etphoto)$",
-	"^[#!/]([Ss]etusername) (.*)$",
-	"^[#!/]([Dd]el)$",
-	"^[#!/]([Ll]ock) (.*)$",
-	"^[#!/]([Uu]nlock) (.*)$",
-	"^[#!/]([Mm]ute) ([^%s]+)$",
-	"^[#!/]([Uu]nmute) ([^%s]+)$",
-	"^[#!/]([Mm]uteuser)$",
-	"^[#!/]([Mm]uteuser) (.*)$",
-	"^[#!/]([Pp]ublic) (.*)$",
-	"^[#!/]([Ss]ettings)$",
-	"^[#!/]([Rr]ules)$",
-	"^[#!/]([Ss]etflood) (%d+)$",
-	"^[#!/]([Cc]lean) (.*)$",
-	"^[#!/]([Hh]elp)$",
-	"^[#!/]([Mm]uteslist)$",
-	"^[#!/]([Mm]utelist)$",
+	"^([Aa]dd)$",
+	"^([Rr]em)$",
+	"^([Mm]ove) (.*)$",
+	"^([Ii]nfo)$",
+	"^([Aa]dmins)$",
+	"^([Oo]wner)$",
+	"^([Mm]odlist)$",
+	"^([Bb]ots)$",
+	"^([Ww]ho)$",
+	"^([Kk]icked)$",
+        "^([Kk]ick) (.*)",
+	"^([Kk]ick)",
+	"^([Uu]pchat)$",
+	"^([Ii][Dd])$",
+	"^([Ii][Dd]) (.*)$",
+	"^([Kk]ickme)$",
+	"^([Kk]ick) (.*)$",
+	"^([Nn]ewlink)$",
+	"^([Ss]etlink)$",
+	"^([Ll]ink)$",
+	"^([Rr]es) (.*)$",
+	"^([Ss]etadmin) (.*)$",
+	"^([Ss]etadmin)",
+	"^([Dd]emoteadmin) (.*)$",
+	"^([Dd]emoteadmin)",
+	"^([Ss]etowner) (.*)$",
+	"^([Ss]etowner)$",
+	"^([Pp]romote) (.*)$",
+	"^([Pp]romote)",
+	"^([Dd]emote) (.*)$",
+	"^([Dd]emote)",
+	"^([Ss]etname) (.*)$",
+	"^([Ss]etabout) (.*)$",
+	"^([Ss]etrules) (.*)$",
+	"^([Ss]etphoto)$",
+	"^([Ss]etusername) (.*)$",
+	"^([Dd]el)$",
+	"^([Ll]ock) (.*)$",
+	"^([Uu]nlock) (.*)$",
+	"^([Mm]ute) ([^%s]+)$",
+	"^([Uu]nmute) ([^%s]+)$",
+	"^([Mm]uteuser)$",
+	"^([Mm]uteuser) (.*)$",
+	"^([Pp]ublic) (.*)$",
+	"^([Ss]ettings)$",
+	"^([Rr]ules)$",
+	"^([Ss]etflood) (%d+)$",
+	"^([Cc]lean) (.*)$",
+	"^([Hh]elp)$",
+	"^([Mm]uteslist)$",
+	"^([Mm]utelist)$",
     "[#!/](mp) (.*)",
 	"[#!/](md) (.*)",
     "([Hh][Tt][Tt][Pp][Ss]://[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]/[Jj][Oo][Ii][Nn][Cc][Hh][Aa][Tt]/%S+)",
@@ -2082,4 +2526,4 @@ return {
   pre_process = pre_process
 }
 --End supergrpup.lua
---By @MehdiHS
+--Translate and Edit By Pouya Poorrahman
