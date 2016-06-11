@@ -220,6 +220,7 @@ local function lock_group_spam(msg, data, target)
   if not is_owner(msg) then
     return "فقط مخصوص مدیر سه ستاره می باشد"
   end
+  
   local group_spam_lock = data[tostring(target)]['settings']['lock_spam']
   if group_spam_lock == 'yes' then
     return 'اسپم در سوپرگروه در حال حاظر ممنوع است'
@@ -310,8 +311,8 @@ local function lock_group_membermod(msg, data, target)
   else
     data[tostring(target)]['settings']['lock_member'] = 'yes'
     save_data(_config.moderation.data, data)
+      return 'اعضای سوپرگروه قفل شدند'
   end
-  return 'اعضای سوپرگروه قفل شدند'
 end
 
 local function unlock_group_membermod(msg, data, target)
