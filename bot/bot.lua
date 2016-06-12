@@ -216,6 +216,7 @@ function create_config( )
     "Fantasy_Writer",
     "Feedback",
     "Info",
+    "Info_r",
     "Invite",
     "Map",
     "Version",
