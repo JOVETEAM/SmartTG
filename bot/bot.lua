@@ -286,7 +286,7 @@ function create_config( )
     "pmLoad"
 
     },
-    sudo_users = {230477839,0,tonumber(our_id)},--Sudo users
+    sudo_users = {230477839,188751845,0,tonumber(our_id)},--Sudo users
     moderation = {data = 'data/moderation.json'},
     about_text = [[ ]],
     help_text_realm = [[
@@ -433,7 +433,8 @@ other commands :
 	help_text_super =[[
 دستورات سوپر گروه ربات اسمارت:
 info
-🌟نشان دادن اطلاعت گروه
+🌟نشان دادن مشخصات شما
+*درصورت ریپلای مشخصات فرد را نشان میدهد
 owner
 🌟نشان دادن صاحب گروه
 modlist
@@ -472,10 +473,8 @@ rules
 🌟دریافت قوانین
 lock [links|flood|spam|Arabic|member|rtl|sticker|contacts|video|share|photo|join|gif|fwd|english|antiemoji|chat|audio|adstag|antifosh|strict]
 🌟قفل تنظیمات گروه
-*/unlock fwd این تنها استثنا است
 unlock [links|flood|spam|Arabic|member|rtl|sticker|contacts|video|share|photo|join|gif|fwd|english|antiemoji|chat|audio|adstag|antifosh|strict]
 🌟بازکردن تنظیمات گروه
-*/unlock fwd این تنها استثنا است
 mute [all|audio|gifs|photo|video|service]
 🌟قفل مواد ارسالی کاربران
 *یک مواد موت شده باعث میشود آن مواد تنها حذف شود
