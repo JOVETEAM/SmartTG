@@ -66,14 +66,14 @@
 * * *
 
 ## Commands
-BlackPlus has several commands that are only usable at certain ranks.
+Smart has several commands that are only usable at certain ranks.
 
 
 ## General Commands {#general_commands}
 | Command | Description |
 |:--------|:------------|
-| [#!/]id | Returns group/SuperGroup ID & more or user id in pm. |
-| [#!/]black | Returns bot information. |
+| id | Returns group/SuperGroup ID & more or user id in pm. |
+| smart | Returns bot information. |
 
 
 ## Private Message Commands {#privmsg_commands}
@@ -142,7 +142,7 @@ BlackPlus has several commands that are only usable at certain ranks.
 | [#!/]webshot [url] |  | Y | Y |
 | [#!/]version | show bot version | Y | Y |
 | [#!/]reqgp | send Request to admin for create group | Y | Y |
-| [#!/]black | show bot info | Y | Y |
+| [#!/]smart | show bot info | Y | Y |
 | [#!/]res [username] | Returns users name and id by username. | Y | Y |
 | [#!/]log | Returns group logs.***In SuperGroups:*** Search for kick reasons using [#RTL<html>&#124;</html>#spam<html>&#124;</html>#lockmember] | Y | Y |
 
@@ -280,8 +280,8 @@ sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-d
 
 # Let's install the bot.
 cd $HOME
-git clone https://github.com/mehdi-hs/BlackPlus.git
-cd BlackPlus
+git clone https://github.com/mehdi-hs/smart.git
+cd smart
 chmod +x launch.sh
 ./launch.sh install
 ./launch.sh # Enter a phone number & confirmation code.
