@@ -58,11 +58,11 @@ fi
 echo -e "$f2 $BOT FOUND IN YOUR HOME DIRECTORY$rst"
 sleep 0.5
 
-   echo ""                _   _ _______  _______ ___  ____  
-echo -e "\033[38;5;208m  | | | | ____\ \/ /_   _/ _ \|  _ \          \033[0;00m"
-echo -e "\033[38;5;208m  | |_| |  _|  \  /  | || | | | |_) |         \033[0;00m"
-echo -e "\033[38;5;208m  |  _  | |___ /  \  | || |_| |  _ <          \033[0;00m"
-echo -e "\033[38;5;208m  |_| |_|_____/_/\_\ |_| \___/|_| \_\         \033[0;00m"
+   echo ""               __________________________________  
+echo -e "\033[38;5;208m  |              SMART               |         \033[0;00m"
+echo -e "\033[38;5;208m  |   is a FAST,Smart,Powerful bot   |         \033[0;00m"
+echo -e "\033[38;5;208m  |   Powered By: Pouya Poorrahman   |         \033[0;00m"
+echo -e "\033[38;5;208m  __________________________________           \033[0;00m"
 
 sleep 1.5
 echo -e "$bld$f4 CHECKING PROCESSES...$rst"
@@ -209,11 +209,11 @@ echo -e "$f2 $BOT FOUND IN YOUR HOME DIRECTORY$rst"
 sleep 0.5
 
 
-   echo ""                _   _ _______  _______ ___  ____  
-echo -e "\033[38;5;208m  | | | | ____\ \/ /_   _/ _ \|  _ \          \033[0;00m"
-echo -e "\033[38;5;208m  | |_| |  _|  \  /  | || | | | |_) |         \033[0;00m"
-echo -e "\033[38;5;208m  |  _  | |___ /  \  | || |_| |  _ <          \033[0;00m"
-echo -e "\033[38;5;208m  |_| |_|_____/_/\_\ |_| \___/|_| \_\         \033[0;00m"
+   echo ""               __________________________________  
+echo -e "\033[38;5;208m  |              SMART               |          \033[0;00m"
+echo -e "\033[38;5;208m  |   is a FAST,Smart,Powerful bot   |          \033[0;00m"
+echo -e "\033[38;5;208m  |   Powered By: Pouya Poorrahman   |          \033[0;00m"
+echo -e "\033[38;5;208m  __________________________________            \033[0;00m"
 
 
 # Starting preliminar setup
@@ -480,10 +480,10 @@ while getopts ":tsTSih" opt; do
 	echo "steady.sh bash script v1.2 iicc 2016 DBTeam" >&2
 	echo ""
 	echo -e "\e[0m"
-echo -e "\033[38;5;208m  | | | | ____\ \/ /_   _/ _ \|  _ \          \033[0;00m"
-echo -e "\033[38;5;208m  | |_| |  _|  \  /  | || | | | |_) |         \033[0;00m"
-echo -e "\033[38;5;208m  |  _  | |___ /  \  | || |_| |  _ <          \033[0;00m"
-echo -e "\033[38;5;208m  |_| |_|_____/_/\_\ |_| \___/|_| \_\         \033[0;00m"
+echo -e "\033[38;5;208m  __________________________________          \033[0;00m"
+echo -e "\033[38;5;208m  |              SMART               |        \033[0;00m"
+echo -e "\033[38;5;208m  |   is a FAST,Smart,Powerful bot   |        \033[0;00m"
+echo -e "\033[38;5;208m  |   Powered By: Pouya Poorrahman   |        \033[0;00m"
 echo ""
 
 	exit 1
