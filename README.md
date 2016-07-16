@@ -2,53 +2,100 @@
 * * *
 آموزش نصب ربات کاملا فارسی:
 
-ابتدا برید تو putty قسمت Host ایپی سرورتون که خریدید و Port پورتتون(پیشفرض 22هستش اگه تازه خریدین) رو وارد کنید و Open رو بزنید
+ابتدا برید تو putty قسمت Host ایپی سرورتون که خریدید و Port پورتتون(پیشفرض 22هستش اگه تازه خریدین) رو وارد کنید و Open روبزنید
+
 اگر برای اولین باره وارد میشید Yes رو بزنید سپس یوزر خودتون (پیشفرض root)هستش وبعدش رمز رو بزنید
+
 حالا دستورات رو بترتیب وارد کرده و اینتر بزنید
+
 (دقت کنید هرجا که y/n نوشت y بزنید)
+
 sudo apt-get update
+
 بعد
+
 sudo apt-get upgrade
+
 بعد
+
 sudo apt-get update; sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev make unzip git redis-server g++ libjansson-dev libpython-dev expat libexpat1-dev
+
 بعد
+
 git clone https://github.com/GrayHatP/smart.git -b supergroups
+
 بعد
+
 cd smart
+
 بعد
+
 chmod +x launch.sh
+
 بعد
+
 ./launch.sh install
+
 بعد
+
 ./launch.sh
+
 وقتی اینو زدید مینویسه phone number
+
 شماره رو با پیشوندش بزنید مثلا +98938XXXXXXX
+
 بعد کد میخواد کدو بزنید بعد وارد میشید
+
 حالا دو دکمه Ctrl و C رو دوبار بزنید تا بیاد بیرون
+
 بعد دستور زیرو بزنید
+
 nano data/config.lua
+
 قسمت سودو هارو پیدا کنید 
+
 sudo users
+
 بعدش جایی که نوشته 0 پاک کنید و بجاش ایدی خودتون که عددی هستو بنویسید
+
 (آیدی عددی از رباتای دیگه باید بدست بیارید(
+
 بعد Ctrl با دکمه X بزنید بعد y بزنید وبعدم اینترو بزنید
+
 حالادستورو زیرو بزنید
+
 nano bot/bot.lua
+
 حالا اینجا هام قسمت سودو رو پیدا کنید 
+
 sudo users
+
 و جلوش اینشکلی ایدیتونو قرار بدید
+
 {218722292,id shoma}
+
 فقط کافیه یه , بزارید و بعدش ایدی خودتونو بنویسید و بعدم Ctrl با X رو بزنید بعدم y بزنید وبعدم اینتر بزنید
+
 حالا دستور زیر رو بزنید تا رباتتون به صورت اتو لانچ راه بیفته 
+
 tmux new-session -s script "bash steady.sh -t"
+
 نکته مهم:
+
 اگر باتتون اف شد وارد سرور شید
+
 ابتدا دستور
+
 killall tmux بزنید
+
 بعد cd smart
+
 بعدهم
+
 tmux new-session -s script "bash steady.sh -t" 
+
 بزنید..رباتتون روشن میشه..یاحق
+
 Pouya Poorrahman
 * * *
 # [SmartTG](https://telegram.me/smarttg) Uses "Anticrash" & "Autolaunch" To Be Active All The Time
